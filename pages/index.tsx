@@ -1,30 +1,36 @@
-import AboutMe from "@/components/modules/AboutMe/AboutMe";
-import ConnectMe from "@/components/modules/ConnectMe/ConnectMe";
-import Projects from "@/components/modules/Projects/Projects";
-import Skills from "@/components/modules/Skills/Skills";
-import Header from "@/components/modules/header/header";
-import Hero from "@/components/modules/hero/hero";
-import Navbar from "@/components/modules/navbar/navbar";
+import AboutMe from "@/components/AboutMe";
+import ConnectMe from "@/components/ConnectMe";
+import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
+import Hero from "@/components/hero";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
   return (
-    <main className="bg-zinc-800 text-zinc-500 text-lg snap-y snap-mandatory  z-0">
+    <main className="bg-zinc-800 text-zinc-500 text-lg snap-y snap-mandatory h-screen overflow-scroll overflow-x-hidden z-0">
       {/* navbar */}
       <Navbar />
-      <Header />
       {/* hero */}
       {/* <section id="hero" className="snap-center"> */}
-      <section id="hero" className="snap-center">
+      <section id="hero" className="snap-start h-screen">
         <Hero />
       </section>
       {/* about me */}
-      <AboutMe />
+      <section id="aboutMe" className="snap-center h-screen">
+        <AboutMe />
+      </section>
       {/* skills */}
-      <Skills />
+      <section id="skills" className="snap-center">
+        <Skills />
+      </section>
       {/* projects */}
-      <Projects />
+      <section id="projects" className="snap-center">
+        <Projects />
+      </section>
       {/* connect me */}
-      <ConnectMe />
+      <section id="connectMe" className="snap-center">
+        <ConnectMe />
+      </section>
     </main>
   );
 }

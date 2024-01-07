@@ -5,7 +5,7 @@ type Props = {};
 
 export default function Hero({}: Props) {
   return (
-    <div className="flex flex-col justify-center items-center h-screen space-y-8 overflow-hidden">
+    <div className="relative flex flex-col justify-center items-center h-screen space-y-8 overflow-hidden">
       <HerosBackgroundCircles />
       <img
         src="https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk4MDQzMTI5NzY3NTM1ODA2/short-captions-for-profile-pictures.png"

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-  FaBars,
   FaEnvelope,
   FaGithub,
   FaInstagram,
@@ -24,7 +23,7 @@ function Navbar() {
           <FaTelegramPlane />
         </Link>
         <Link
-          href="https:/t.me/Marzieh_monshizadeh"
+          href="https://www.instagram.com/marzieh___monshizadeh/"
           className="link hover:text-pink-500"
         >
           <FaInstagram />
@@ -48,16 +47,12 @@ function Navbar() {
         transition={{ duration: 1.5 }}
         className="flex items-center gap-3"
       >
-        <Link href="#" className="link hidden md:inline-flex">
+        <Link href="#connectMe" className="link hidden md:inline-flex">
           Get In Touch
         </Link>
-        <Link
-          href="https://www.linkedin.com/in/marzieh-monshizadeh-175a061a0/"
-          className="link"
-        >
+        <Link href="#connectMe" className="link">
           <FaEnvelope />
         </Link>
-        <FaBars className="inline-flex md:hidden" />
       </motion.section>
     </nav>
   );

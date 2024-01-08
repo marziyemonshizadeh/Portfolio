@@ -21,7 +21,7 @@ export default function ConnectMe() {
       <h2 className="absolute md:top-20 top-8 tracking-[20px] uppercase my-5">
         CONNECT ME
       </h2>
-      <section className="absolute md:top-60 top-44 text-zinc-400 leading-[40px]">
+      <section className="absolute md:top-52 top-44 text-zinc-400 leading-[40px]">
         <div className="flex justify-center items-center">
           <FaPhoneAlt className="text-orange-600" />
           +9354374790
@@ -43,8 +43,8 @@ export default function ConnectMe() {
               type="text"
               id="text"
               placeholder="name"
-              className="bg-zinc-700 border-none mb-5 text-slate-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              {...register("title", { required: true })}
+              className="inputStyle"
+              {...register("name", { required: true })}
             />
             {/* {errors.title && (
             <p className="text-red-700">لطفا عنوان خانه را وارد کنید !</p>
@@ -54,8 +54,8 @@ export default function ConnectMe() {
               type="text"
               id="text"
               placeholder="email"
-              className="bg-zinc-700 border-none mb-5  text-slate-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              {...register("meterage", { required: true })}
+              className="inputStyle"
+              {...register("email", { required: true })}
             />
             {/* {errors.meterage && (
             <p className="text-red-700">لطفا عنوان خانه را وارد کنید!</p>
@@ -64,15 +64,15 @@ export default function ConnectMe() {
           <input
             type="text"
             id="text"
-            placeholder="name"
-            className="bg-zinc-700 border-none mb-5 text-slate-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            {...register("title", { required: true })}
+            placeholder="subject"
+            className="inputStyle"
+            {...register("subject", { required: true })}
           />
 
           <textarea
             id="message"
-            // rows="4"
-            className="bg-zinc-700 border-none mb-5 text-slate-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            {...register("message", { required: true })}
+            className="inputStyle"
             placeholder="Write your thoughts here..."
           ></textarea>
 

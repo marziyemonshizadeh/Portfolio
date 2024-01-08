@@ -2,26 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components{
+    .heroBtn{
+        @apply tracking-widest p-2 cursor-pointer hover:text-orange-600
+    } 
+    .inputStyle{
+        @apply bg-zinc-700 border-none outline-none mb-5 text-slate-200 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+    } 
+    .link{
+        @apply font-bold hover:text-orange-600
+    }
+    .title{
+        @apply -tracking-tighter text-center my-5 
+    }
 }

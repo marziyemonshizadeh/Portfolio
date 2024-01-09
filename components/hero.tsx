@@ -28,7 +28,7 @@ export default function Hero({}: Props) {
           loop={5}
           delaySpeed={2000}
           cursorStyle="_"
-          cursorColor="rgb(249 115 22 / var(--tw-text-opacity))"
+          cursorColor="rgb(236 72 153 / var(--tw-text-opacity))"
           cursor
           // typeSpeed={70}
           // deleteSpeed={50}

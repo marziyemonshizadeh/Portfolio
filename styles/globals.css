@@ -4,15 +4,19 @@
 
 @layer components{
     .heroBtn{
-        @apply tracking-widest p-2 cursor-pointer hover:text-orange-600
+        @apply tracking-widest p-2 cursor-pointer hover:text-pink-500
     } 
     .inputStyle{
         @apply bg-zinc-700 border-none outline-none mb-5 text-slate-200 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
     } 
     .link{
-        @apply font-bold hover:text-orange-600
+        @apply font-bold hover:text-pink-500
     }
     .title{
         @apply -tracking-tighter text-center my-5 
+    }
+    .underlineStyle{
+        @apply underline decoration-pink-500
+
     }
 }

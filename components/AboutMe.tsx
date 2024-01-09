@@ -49,8 +49,7 @@ function AboutMe({}: Props) {
           className="text-zinc-400 text-center md:text-left md:text-base text-sm"
         >
           <h4 className="my-4 font-semibold text-2xl text-slate-50">
-            Here is the{" "}
-            <span className="underline decoration-orange-400">little</span>{" "}
+            Here is the <span className="underlineStyle">little</span>{" "}
             background
           </h4>
           <p className="leading-10">

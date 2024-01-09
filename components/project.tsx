@@ -30,8 +30,8 @@ const Project = ({ img, title, description, demoUrl, githubUrl }: Props) => {
       >
         <h2 className="my-4 font-semibold text-2xl text-slate-300">{title}</h2>
         <p className="max-w-md leading-9">{description}</p>
-        <div className="flex justify-center items-center gap-5">
-          <Link href={demoUrl}>
+        <div className="flex justify-center items-center gap-5 my-2">
+          <Link href={demoUrl} className="link hover:text-white">
             <FaCode />
           </Link>
           <Link href={githubUrl} className="link hover:text-white">

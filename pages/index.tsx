@@ -7,7 +7,7 @@ import Navbar from "@/components/navbar";
 
 export default function Home() {
   return (
-    <main className="bg-zinc-800 text-zinc-500 text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-gray-400/20 z-0">
+    <main className="bg-zinc-800 text-zinc-500 text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0">
       {/* navbar */}
       <Navbar />
       {/* hero */}

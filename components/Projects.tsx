@@ -16,7 +16,7 @@ export default function Projects() {
         PROJECTS
       </h2>
       <Swiper
-        className="absolute md:top-36 top-32 my-5 select-none text-white"
+        className="absolute md:top-36 top-32 my-5 select-none"
         loop={true}
       >
         <SwiperSlide>
@@ -65,6 +65,8 @@ export default function Projects() {
           />
         </SwiperSlide>
       </Swiper>
+      {/* amazing background */}
+      <div className="w-full absolute top-[30%] bg-[#fe019a]/10 left-0 h-[300px] -skew-y-12" />
     </motion.div>
   );
 }

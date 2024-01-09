@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
@@ -21,17 +22,22 @@ export default function ConnectMe() {
       <h2 className="absolute md:top-20 top-8 tracking-[20px] uppercase my-5">
         CONNECT ME
       </h2>
-      <section className="absolute md:top-52 top-44 text-zinc-400 leading-[40px]">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="absolute md:top-52 top-44 text-zinc-400 leading-[40px]"
+      >
         <div className="flex justify-center items-center">
-          <FaPhoneAlt className="text-orange-600" />
+          <FaPhoneAlt className="text-pink-500" />
           +9354374790
         </div>
         <div className="flex justify-center items-center gap-3">
-          <FaEnvelope className="text-orange-600" />
+          <FaEnvelope className="text-pink-500" />
           MarziehMonshizade@yahoo.com
         </div>
         <div className="flex justify-center items-center gap-3">
-          <FaMapMarkerAlt className="text-orange-600" />
+          <FaMapMarkerAlt className="text-pink-500" />
           Teh,SouthJannatabad
         </div>
         <form
@@ -78,12 +84,12 @@ export default function ConnectMe() {
 
           <button
             type="submit"
-            className="bg-orange-600 hover:bg-orange-500 w-full rounded-lg text-slate-200"
+            className="bg-pink-500 hover:bg-orange-500 w-full rounded-lg text-slate-200"
           >
             Submit
           </button>
         </form>
-      </section>
+      </motion.section>
     </div>
   );
 }

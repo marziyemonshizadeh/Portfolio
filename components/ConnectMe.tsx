@@ -1,21 +1,48 @@
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+const { default: connectToDB } = require("@/utils/db");
 
 export default function ConnectMe() {
+  // const getCourses = async () => {
+  //   const res = await fetch(`/api/courses`);
+  //   const coursesData = await res.json();
+
+  //   console.log("Res =>", res);
+
+  //   if (res.status === 200) {
+  //     console.log(coursesData);
+  //     setData(coursesData);
+  //   }
+  // };
   const {
     register,
     reset,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
   } = useForm();
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
+    connectToDB();
     console.log(data);
-    // axios.post("http://localhost:4001/Estates", data).then((res) => {
+    await fetch("api/messages", {
+      method: "POST",
+      headers: {
+        "content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (res.status === 201) {
+          console.log("ok = ", res);
+        }
+        if (res.status === 500) {
+          console.log("500 = ", res);
+        }
 
-    // return res.data;
-    // });
-    reset();
+        reset();
+        return res.json();
+      })
+      .catch((err) => console.log("can not sent message", err));
   };
   return (
     <div className="relative flex justify-center h-screen">
@@ -44,29 +71,27 @@ export default function ConnectMe() {
           className="max-w-[250px] mx-auto m-5"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="flex gap-2">
-            <input
-              type="text"
-              id="text"
-              placeholder="name"
-              className="inputStyle"
-              {...register("name", { required: true })}
-            />
-            {/* {errors.title && (
-            <p className="text-red-700">لطفا عنوان خانه را وارد کنید !</p>
-          )} */}
+          <input
+            type="text"
+            id="text"
+            placeholder="name"
+            className="inputStyle"
+            {...register("name", { required: true })}
+          />
+          {errors.name && (
+            <p className="text-pink-700">name is required field</p>
+          )}
 
-            <input
-              type="text"
-              id="text"
-              placeholder="email"
-              className="inputStyle"
-              {...register("email", { required: true })}
-            />
-            {/* {errors.meterage && (
-            <p className="text-red-700">لطفا عنوان خانه را وارد کنید!</p>
-          )} */}
-          </div>
+          <input
+            type="email"
+            id="text"
+            placeholder="email"
+            className="inputStyle"
+            {...register("email", { required: true })}
+          />
+          {errors.email && (
+            <p className="text-pink-700">email is required field</p>
+          )}
           <input
             type="text"
             id="text"
@@ -74,17 +99,22 @@ export default function ConnectMe() {
             className="inputStyle"
             {...register("subject", { required: true })}
           />
-
+          {errors.subject && (
+            <p className="text-pink-700">email is required field</p>
+          )}
           <textarea
-            id="message"
-            {...register("message", { required: true })}
+            id="body"
+            {...register("body", { required: true })}
             className="inputStyle"
             placeholder="Write your thoughts here..."
           ></textarea>
-
+          {errors.body && (
+            <p className="text-pink-700">This is required field</p>
+          )}
           <button
             type="submit"
-            className="bg-pink-500 hover:bg-orange-500 w-full rounded-lg text-slate-200"
+            className="bg-pink-500 active:bg-pink-600 w-full rounded-lg text-slate-200"
+            disabled={!isDirty || !isValid}
           >
             Submit
           </button>

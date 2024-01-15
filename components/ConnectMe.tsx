@@ -1,27 +1,25 @@
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const { default: connectToDB } = require("@/utils/db");
+type FormValues = {
+  name: string;
+  email: string;
+  subject: string;
+  body: string;
+};
+type Props = {};
 
-export default function ConnectMe() {
-  // const getCourses = async () => {
-  //   const res = await fetch(`/api/courses`);
-  //   const coursesData = await res.json();
-
-  //   console.log("Res =>", res);
-
-  //   if (res.status === 200) {
-  //     console.log(coursesData);
-  //     setData(coursesData);
-  //   }
-  // };
+export default function ConnectMe({}: Props) {
   const {
     register,
     reset,
     handleSubmit,
     formState: { errors, isDirty, isValid },
-  } = useForm();
-  const onSubmit = async (data: any) => {
+  } = useForm<FormValues>();
+  const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     connectToDB();
     console.log(data);
     await fetch("api/messages", {
@@ -34,8 +32,39 @@ export default function ConnectMe() {
       .then((res) => {
         if (res.status === 201) {
           console.log("ok = ", res);
-        }
-        if (res.status === 500) {
+          toast.success("sent message successfully ;)", {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        } else if (res.status === 422) {
+          toast.warning("! داده ی شما معتبر نمی باشد", {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        } else if (res.status === 404) {
+          toast.error("!  خطای سمت سرور رخ داده است", {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        } else if (res.status === 500) {
           console.log("500 = ", res);
         }
 
@@ -46,14 +75,13 @@ export default function ConnectMe() {
   };
   return (
     <div className="relative flex justify-center h-screen">
-      <h2 className="absolute md:top-20 top-8 tracking-[20px] uppercase my-5">
-        CONNECT ME
-      </h2>
+      <ToastContainer />
+      <h2 className="title">CONNECT ME</h2>
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="absolute md:top-52 top-44 text-zinc-400 leading-[40px]"
+        className="absolute md:top-52 top-44  leading-[40px]"
       >
         <div className="flex justify-center items-center">
           <FaPhoneAlt className="text-pink-500" />
@@ -113,7 +141,7 @@ export default function ConnectMe() {
           )}
           <button
             type="submit"
-            className="bg-pink-500 active:bg-pink-600 w-full rounded-lg text-slate-200"
+            className="bg-pink-500 active:bg-pink-600 w-full rounded-lg dark:text-slate-200 text-white"
             disabled={!isDirty || !isValid}
           >
             Submit

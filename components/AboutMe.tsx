@@ -10,9 +10,7 @@ function AboutMe({}: Props) {
       transition={{ duration: 1.5 }}
       className="relative flex flex-col items-center justify-evenly mx-auto px-10 max-w-7xl h-screen"
     >
-      <h2 className="absolute md:top-20 top-8 tracking-[20px] text-center uppercase my-5">
-        ABOUT ME
-      </h2>
+      <h2 className="title">ABOUT ME</h2>
       <div className="absolute md:top-24 top-8 flex md:flex-row flex-col justify-center items-center md:gap-9 gap-20 md:mx-56 m-20">
         <motion.img
           initial={{
@@ -46,10 +44,10 @@ function AboutMe({}: Props) {
             x: 0,
           }}
           viewport={{ once: true }}
-          className="text-zinc-400 text-center md:text-left md:text-base text-sm"
+          className="text-center md:text-left md:text-base text-sm"
         >
-          <h4 className="my-4 font-semibold text-2xl text-slate-50">
-            Here is the <span className="underlineStyle">little</span>{" "}
+          <h4 className="my-4 font-semibold text-2xl text-slate-800 dark:text-zinc-50">
+            Here is the <span className="underlineStyle">little</span>
             background
           </h4>
           <p className="leading-10">

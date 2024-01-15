@@ -7,13 +7,13 @@
         @apply tracking-widest p-2 cursor-pointer hover:text-pink-500
     } 
     .inputStyle{
-        @apply bg-zinc-700 border-none outline-none mb-5 text-slate-200 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+        @apply dark:bg-zinc-700 bg-zinc-200 border-none outline-none my-1 dark:text-slate-200 text-slate-800 text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400
     } 
     .link{
         @apply font-bold hover:text-pink-500
     }
     .title{
-        @apply -tracking-tighter text-center my-5 
+        @apply absolute md:top-20 top-8 tracking-[20px] text-center uppercase my-5
     }
     .underlineStyle{
         @apply underline decoration-pink-500

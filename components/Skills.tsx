@@ -9,9 +9,7 @@ export default function Skills() {
       transition={{ duration: 1.5 }}
       className="relative h-screen  flex flex-col items-center justify-center space-y-8 overflow-hidden"
     >
-      <h2 className="absolute md:top-20 top-8 tracking-[20px] uppercase my-5">
-        SKILLS
-      </h2>
+      <h2 className="title">SKILLS</h2>
       <div className="absolute md:top-36 top-28 grid lg:grid-cols-4  md:grid-cols-3 grid-cols-2 md:gap-5 gap-2">
         <Skill
           img="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/640px-React_Logo_SVG.svg.png"

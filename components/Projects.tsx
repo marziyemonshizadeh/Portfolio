@@ -2,9 +2,18 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
+import { Key } from "react";
 import "swiper/css";
 import Project from "./project";
-export default function Projects() {
+type Prop = {
+  _id: Key | null | undefined;
+  img: string;
+  title: string;
+  description: string;
+  demoUrl: string;
+  githubUrl: string;
+};
+export default function Projects({ projects }: any) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -12,58 +21,24 @@ export default function Projects() {
       transition={{ duration: 1.5 }}
       className="relative flex justify-center h-screen"
     >
-      <h2 className="absolute md:top-20 top-8 tracking-[20px] uppercase my-5">
-        PROJECTS
-      </h2>
+      <h2 className="title">PROJECTS</h2>
       <Swiper
         className="absolute md:top-36 top-32 my-5 select-none"
         loop={true}
       >
-        <SwiperSlide>
-          <Project
-            img="https://appscrip.com/wp-content/uploads/2021/09/Instagram-clone-application-885x1024.png"
-            title="Instagram Clone"
-            description="React js - Bootstrap5"
-            demoUrl="https://instagram-clone-g6yxm3y8y-marziehs-projects.vercel.app"
-            githubUrl="https://jsonserver-instagram-clone.iran.liara.ru"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Project
-            img="https://appscrip.com/wp-content/uploads/2021/09/Instagram-clone-application-885x1024.png"
-            title="FullStack CMS"
-            description="Next js - Tailwind css -Mongo db"
-            demoUrl="https://instagram-clone-g6yxm3y8y-marziehs-projects.vercel.app"
-            githubUrl="https://jsonserver-instagram-clone.iran.liara.ru"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Project
-            img="https://appscrip.com/wp-content/uploads/2021/09/Instagram-clone-application-885x1024.png"
-            title="Real Estate"
-            description="Next js -Tailwind css - swiper - Mongo db"
-            demoUrl="https://instagram-clone-g6yxm3y8y-marziehs-projects.vercel.app"
-            githubUrl="https://jsonserver-instagram-clone.iran.liara.ru"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Project
-            img="https://appscrip.com/wp-content/uploads/2021/09/Instagram-clone-application-885x1024.png"
-            title="wikipedia"
-            description="React js - bootstrap5"
-            demoUrl="https://instagram-clone-g6yxm3y8y-marziehs-projects.vercel.app"
-            githubUrl="https://jsonserver-instagram-clone.iran.liara.ru"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Project
-            img="https://appscrip.com/wp-content/uploads/2021/09/Instagram-clone-application-885x1024.png"
-            title="CMS"
-            description="React js - Typescript"
-            demoUrl="https://instagram-clone-g6yxm3y8y-marziehs-projects.vercel.app"
-            githubUrl="https://jsonserver-instagram-clone.iran.liara.ru"
-          />
-        </SwiperSlide>
+        {projects?.map((item: Prop) => {
+          return (
+            <SwiperSlide key={item._id}>
+              <Project
+                img={item.img}
+                title={item.title}
+                description={item.description}
+                demoUrl={item.demoUrl}
+                githubUrl={item.githubUrl}
+              />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
       {/* amazing background */}
       <div className="w-full absolute top-[30%] bg-[#fe019a]/10 left-0 h-[300px] -skew-y-12" />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
 import HerosBackgroundCircles from "./hero'sBackgroundCircles";
@@ -7,15 +8,18 @@ export default function Hero({}: Props) {
   return (
     <div className="relative flex flex-col justify-center items-center h-screen space-y-8 overflow-hidden">
       <HerosBackgroundCircles />
-      <img
-        src="https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk4MDQzMTI5NzY3NTM1ODA2/short-captions-for-profile-pictures.png"
+      <Image
+        width={100}
+        height={100}
+        // src="https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk4MDQzMTI5NzY3NTM1ODA2/short-captions-for-profile-pictures.png"
+        src="/images/bbee7bef25d5d9294f4c01521de4ce9a.jpg"
         alt="profile"
         className="relative object-cover rounded-full w-32 h-32 mx-auto"
       />
       <h2 className="uppercase md:tracking-[20px] tracking-[10px] text-center">
         Computer Engineer
       </h2>
-      <h1 className="flex text-slate-100 font-semibold md:text-4xl text-2xl">
+      <h1 className="flex dark:text-slate-100 text-slate-800 font-semibold md:text-4xl text-2xl">
         <Typewriter
           words={[
             "Hi I Am Marzieh Monshizadeh",

@@ -7,7 +7,13 @@ import {
   FaLinkedinIn,
   FaTelegramPlane,
 } from "react-icons/fa";
+// import ThemeSwitch from "./themeSwitch";
+import { useTheme } from "next-themes";
+import ThemeSwitch from "./themeSwitch";
+
 function Navbar() {
+  const { theme, setTheme, resolvedTheme } = useTheme();
+
   return (
     <nav className="flex md:justify-around justify-between items-start md:p-3 p-2 sticky top-0 z-50">
       <motion.section
@@ -36,9 +42,12 @@ function Navbar() {
         </Link>
         <Link
           href="https://github.com/marziyemonshizadeh/"
-          className="link hover:text-white"
+          className="link dark:hover:text-white hover:text-black"
         >
           <FaGithub />
+        </Link>
+        <Link href="mailto:marziehmonshizade@yahoo.com" className="link">
+          <FaEnvelope />
         </Link>
       </motion.section>
       <motion.section
@@ -47,11 +56,8 @@ function Navbar() {
         transition={{ duration: 1.5 }}
         className="flex items-center gap-3"
       >
-        <Link href="#connectMe" className="link hidden md:inline-flex">
-          Get In Touch
-        </Link>
-        <Link href="#connectMe" className="link">
-          <FaEnvelope />
+        <Link href="#">
+          <ThemeSwitch />
         </Link>
       </motion.section>
     </nav>

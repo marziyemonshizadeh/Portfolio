@@ -7,7 +7,6 @@ const schema = mongoose.Schema({
     required: true,
     minLength: 10,
     maxLength: 150,
-    required: true,
   },
   description: {
     type: String,

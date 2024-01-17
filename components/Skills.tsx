@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import Skill from "./skill";
-
-export default function Skills() {
+type Skill = {
+  _id: null | undefined;
+  imgUrl: string;
+  Percent: number;
+};
+export default function Skills({ skills }: any) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -10,8 +14,14 @@ export default function Skills() {
       className="relative h-screen  flex flex-col items-center justify-center space-y-8 overflow-hidden"
     >
       <h2 className="title">SKILLS</h2>
-      <div className="absolute md:top-36 top-28 grid lg:grid-cols-4  md:grid-cols-3 grid-cols-2 md:gap-5 gap-2">
-        <Skill
+      {/* md:top-36 top-28 */}
+      <div className="absolute  grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 md:gap-5 gap-1 m-7">
+        {skills?.map((item: Skill) => {
+          return (
+            <Skill img={item.imgUrl} Percent={item.Percent} key={item._id} />
+          );
+        })}
+        {/* <Skill
           img="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/640px-React_Logo_SVG.svg.png"
           Percent="80"
         />
@@ -59,7 +69,7 @@ export default function Skills() {
         <Skill
           img="https://iconape.com/wp-content/png_logo_vector/redux-logo.png"
           Percent="60"
-        />
+        /> */}
       </div>
     </motion.div>
   );

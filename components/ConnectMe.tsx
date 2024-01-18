@@ -1,18 +1,14 @@
+import { FormValues } from "@/typings";
 import { motion } from "framer-motion";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const { default: connectToDB } = require("@/utils/db");
-type FormValues = {
-  name: string;
-  email: string;
-  subject: string;
-  body: string;
-};
-type Props = {};
 
-export default function ConnectMe({}: Props) {
+export default function ConnectMe({ MyInfo }: any) {
+  console.log("MyInfo", MyInfo);
+
   const {
     register,
     reset,
@@ -74,26 +70,26 @@ export default function ConnectMe({}: Props) {
       .catch((err) => console.log("can not sent message", err));
   };
   return (
-    <div className="relative flex justify-center h-screen">
+    <div className="relative flex justify-center items-center h-screen">
       <ToastContainer />
       <h2 className="title">CONNECT ME</h2>
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="absolute md:top-52 top-44  leading-[40px]"
+        className="absolute   leading-[40px]"
       >
         <div className="flex justify-center items-center">
-          <FaPhoneAlt className="text-pink-500" />
-          +9354374790
+          <FaPhoneAlt className="text-pink-500 mx-2" />
+          {Object.assign({}, MyInfo)[0].phoneNumber}
         </div>
         <div className="flex justify-center items-center gap-3">
           <FaEnvelope className="text-pink-500" />
-          MarziehMonshizade@yahoo.com
+          {Object.assign({}, MyInfo)[0].mail}
         </div>
         <div className="flex justify-center items-center gap-3">
           <FaMapMarkerAlt className="text-pink-500" />
-          Teh,SouthJannatabad
+          {Object.assign({}, MyInfo)[0].address}
         </div>
         <form
           className="max-w-[250px] mx-auto m-5"

@@ -1,17 +1,10 @@
+import { project } from "@/typings";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaBullseye } from "react-icons/fa6";
 
-type Props = {
-  img: string;
-  demoUrl: string;
-  githubUrl: string;
-  title: string;
-  description: string;
-};
-
-const Project = ({ img, title, description, demoUrl, githubUrl }: Props) => {
+const Project = ({ img, title, description, demoUrl, githubUrl }: project) => {
   return (
     <div className="flex flex-col md:justify-center items-center p-2">
       <motion.img
@@ -32,7 +25,7 @@ const Project = ({ img, title, description, demoUrl, githubUrl }: Props) => {
         <h2 className="my-4 font-semibold text-2xl text-black dark:text-slate-300">
           {title}
         </h2>
-        <p className="max-w-[800px] leading-9 text-sm">{description}</p>
+        <p className="max-w-[800px] md:leading-9 text-sm">{description}</p>
         <div className="flex justify-center items-center gap-5 my-2">
           <Link
             href={demoUrl}

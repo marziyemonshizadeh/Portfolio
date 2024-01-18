@@ -1,25 +1,11 @@
-import MessageModel from "@/models/message.js";
+import MessageModel from "@/models/message";
 import type { NextApiRequest, NextApiResponse } from 'next';
 const { default: connectToDB } = require("@/utils/db");
-
-type Data = {
-  name: string,
-  email: string,
-  subject: string,
-  body: string,
-  message: string,
-}
 
 const handler = async (req: NextApiRequest,
   res: NextApiResponse) => {
   connectToDB();
   if (req.method === "GET") {
-    console.log(req.query);
-    // if (req.query.q) {
-    //   const { q } = req.query;
-    //   const messages = await MessageModel.find({ name: { $regex: q } });
-    //   res.json(messages);
-    // } else {
       const messages = await MessageModel.find({});
       return res.json(messages);
     // }

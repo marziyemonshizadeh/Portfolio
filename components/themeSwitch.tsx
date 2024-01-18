@@ -23,7 +23,7 @@ function ThemeSwitch({}: Props) {
     return (
       <IoMdMoon
         onClick={() => setTheme("dark")}
-        className="dark:hover:text-white hover:text-black text-2xl"
+        className="hover:text-black text-2xl"
       />
     );
   }

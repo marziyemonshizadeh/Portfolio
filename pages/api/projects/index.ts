@@ -6,9 +6,8 @@ const handler = async (req: NextApiRequest,
   res: NextApiResponse) => {
   connectToDB();
   if (req.method === "GET") {
-    console.log(req.query);
-      const messages = await ProjectModel.find({});
-      return res.json(messages);
+      const projects = await ProjectModel.find({});
+      return res.json(projects);
   }
 };
 export default handler;

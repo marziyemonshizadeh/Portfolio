@@ -2,40 +2,25 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import { Key } from "react";
+import { project } from "@/typings";
 import "swiper/css";
 import Project from "./project";
-type Prop = {
-  _id: Key | null | undefined;
-  img: string;
-  title: string;
-  description: string;
-  demoUrl: string;
-  githubUrl: string;
-};
+
 export default function Projects({ projects }: any) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="relative flex justify-center h-screen"
+      className="relative flex justify-center items-center h-screen"
     >
       <h2 className="title">PROJECTS</h2>
-      <Swiper
-        className="absolute md:top-36 top-32 my-5 select-none"
-        loop={true}
-      >
-        {projects?.map((item: Prop) => {
+      {/* md:top-36 top-32 */}
+      <Swiper className="absolute my-5 select-none" loop={true}>
+        {projects?.map((item: project) => {
           return (
             <SwiperSlide key={item._id}>
-              <Project
-                img={item.img}
-                title={item.title}
-                description={item.description}
-                demoUrl={item.demoUrl}
-                githubUrl={item.githubUrl}
-              />
+              <Project {...item} />
             </SwiperSlide>
           );
         })}

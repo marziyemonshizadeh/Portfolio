@@ -4,15 +4,14 @@ import { Typewriter } from "react-simple-typewriter";
 import HerosBackgroundCircles from "./hero'sBackgroundCircles";
 type Props = {};
 
-export default function Hero({}: Props) {
+export default function Hero({ MyInfo }: any) {
   return (
     <div className="relative flex flex-col justify-center items-center h-screen space-y-8 overflow-hidden">
       <HerosBackgroundCircles />
       <Image
         width={100}
         height={100}
-        // src="https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk4MDQzMTI5NzY3NTM1ODA2/short-captions-for-profile-pictures.png"
-        src="/images/bbee7bef25d5d9294f4c01521de4ce9a.jpg"
+        src={Object.assign({}, MyInfo)[0].heroPageImgUrl}
         alt="profile"
         className="relative object-cover rounded-full w-32 h-32 mx-auto"
       />
@@ -24,9 +23,10 @@ export default function Hero({}: Props) {
           words={[
             "Hi I Am Marzieh Monshizadeh",
             "I am fronted developer",
-            "<LoveCoding/>",
-            "<LoveSolvingMath/>",
-            "And Drink coffee",
+            "<LoveCoding👩‍💻​/>",
+            "<Math/>",
+            "<Music🎧/>",
+            "And <coffee☕/>",
             "Hi I Am Marzieh Monshizadeh",
           ]}
           loop={5}
@@ -34,8 +34,6 @@ export default function Hero({}: Props) {
           cursorStyle="_"
           cursorColor="rgb(236 72 153 / var(--tw-text-opacity))"
           cursor
-          // typeSpeed={70}
-          // deleteSpeed={50}
         />
       </h1>
       <section className="z-20">
@@ -52,7 +50,6 @@ export default function Hero({}: Props) {
           ConnectMe
         </Link>
       </section>
-      {/* <Header /> */}
     </div>
   );
 }

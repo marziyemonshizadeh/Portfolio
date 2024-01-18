@@ -12,6 +12,5 @@ const schema = mongoose.Schema({
   },
 });
 
-//have error
 const model = mongoose.models.skill || mongoose.model("skill", schema);
 export default model;

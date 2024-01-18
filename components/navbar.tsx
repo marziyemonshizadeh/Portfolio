@@ -7,13 +7,10 @@ import {
   FaLinkedinIn,
   FaTelegramPlane,
 } from "react-icons/fa";
-// import ThemeSwitch from "./themeSwitch";
-import { useTheme } from "next-themes";
+
 import ThemeSwitch from "./themeSwitch";
 
 function Navbar() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-
   return (
     <nav className="flex md:justify-around justify-between items-start md:p-3 p-2 sticky top-0 z-50">
       <motion.section

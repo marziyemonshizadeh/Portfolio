@@ -15,9 +15,9 @@ const HerosBackgroundCircles = (props: Props) => {
       }}
       className="realative flex justify-center items-center"
     >
-      <div className="absolute border border-[#333333] h-[200px] w-[200px] md:inline-flex hidden rounded-full mt-52 animate-ping"></div>
-      <div className="absolute border border-[#333333] h-[300px] w-[300px] md:inline-flex hidden rounded-full mt-52 animate-ping"></div>
-      <div className="absolute border border-zinc-700 h-[350px] w-[350px] md:inline-flex hidden rounded-full mt-52 animate-ping"></div>
+      <div className="absolute border border-[#9f949f] dark:border-slate-200/10 h-[200px] w-[200px] md:inline-flex hidden rounded-full mt-52 animate-ping"></div>
+      <div className="absolute border border-[#9f949f] dark:border-slate-50/10 h-[300px] w-[300px] md:inline-flex hidden rounded-full mt-52 animate-ping"></div>
+      <div className="absolute border border-[#9f949f] dark:border-[#6f666f] h-[350px] w-[350px] md:inline-flex hidden rounded-full mt-52 animate-ping"></div>
       {/* <div className="absolute border border-red-600 h-[650px] w-[650px] rounded-full mt-52 animate-pulse"></div>
       <div className="absolute border border-white h-[800px] w-[800px] rounded-full mt-52"></div> */}
     </motion.div>

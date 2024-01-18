@@ -34,6 +34,5 @@ const schema = mongoose.Schema({
   },
 });
 
-//have error
 const model = mongoose.models.project || mongoose.model("project", schema);
 export default model;

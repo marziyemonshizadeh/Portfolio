@@ -28,6 +28,5 @@ const schema = mongoose.Schema({
   },
 });
 
-//have error
 const model = mongoose.models.message || mongoose.model("message", schema);
 export default model;

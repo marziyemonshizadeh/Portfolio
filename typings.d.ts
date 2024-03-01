@@ -28,5 +28,11 @@ export interface skill{
     _id: Key | null | undefined;
     directionLeft:any;
     imgUrl:string,
-    Percent:string
+    Percent:any;
+    name: string;
+}
+export interface library{
+    _id: Key | null | undefined;
+    imgUrl:string,
+    name: string;
 }

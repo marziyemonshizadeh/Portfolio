@@ -1,0 +1,27 @@
+const en = {
+  description:
+    "I am Marzieh Menshizadeh, a computer engineer and front-endprogrammer, I am an accurate, responsible and hardworking person, Iam eager to learn new technologies. I am very interested in math and programming. I started learning Front End almost two years ago and am currently learning TypeScript and Next js !",
+  job: "Computer Engineer",
+  Typewriter1: "Hi I Am Marzieh Monshizadeh",
+  Typewriter2: "I am fronted developer",
+  Typewriter3: "<LoveCoding👩‍💻​/>",
+  Typewriter4: "<Math/>",
+  Typewriter5: "<Music🎧/>",
+  Typewriter6: "And <coffee☕/>",
+  aboutMeTitle: "AboutMe",
+  aboutMeLitleBg: "Here is the little background",
+  SkillsTitle: "Skills",
+  librariesTitle: "Libaries",
+  ProjectsTitle: "Projects",
+  ConnectMeTitle: "ConnectMe",
+  nameInput: "name",
+  nameInputError: "name is required field",
+  emailInput: "email",
+  emailInputError: "email is required field",
+  subjectInput: "subject",
+  subjectInputError: "subject is required field",
+  bodyInput: "Write your thoughts here...",
+  bodyInputError: "This is required field",
+  SubmitBtnTxt: "Submit",
+};
+export default en;

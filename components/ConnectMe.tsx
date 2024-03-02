@@ -20,7 +20,6 @@ export default function ConnectMe({
   bodyInputError,
   SubmitBtnTxt,
 }: any) {
-  console.log("MyInfo", MyInfo);
   const { t } = useTranslation();
 
   const {
@@ -31,7 +30,6 @@ export default function ConnectMe({
   } = useForm<FormValues>();
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
     connectToDB();
-    console.log(data);
     await fetch("api/messages", {
       method: "POST",
       headers: {

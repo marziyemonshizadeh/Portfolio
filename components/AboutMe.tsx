@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 
 function AboutMe({ title, description, aboutMeLitleBg }: any) {
-  console.log("title=", title);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}

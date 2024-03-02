@@ -13,7 +13,6 @@ import SkillModel from "@/models/skill";
 import { library, myInfo, project, skill } from "@/typings";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 const { default: connectToDB } = require("@/utils/db");
@@ -27,15 +26,15 @@ export default function Home({
   const router = useRouter();
   const { t } = useTranslation();
   // Disable right click
-  useEffect(() => {
-    const handleContextmenu = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-    };
-    document.addEventListener("contextmenu", handleContextmenu);
-    return function cleanup() {
-      document.removeEventListener("contextmenu", handleContextmenu);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleContextmenu = (e: { preventDefault: () => void }) => {
+  //     e.preventDefault();
+  //   };
+  //   document.addEventListener("contextmenu", handleContextmenu);
+  //   return function cleanup() {
+  //     document.removeEventListener("contextmenu", handleContextmenu);
+  //   };
+  // }, []);
 
   return (
     <main

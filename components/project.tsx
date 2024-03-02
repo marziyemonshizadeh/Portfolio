@@ -6,7 +6,7 @@ import { FaBullseye } from "react-icons/fa6";
 
 const Project = ({ img, title, description, demoUrl, githubUrl }: project) => {
   return (
-    <div className="flex flex-col md:justify-center items-center p-2">
+    <div className="flex flex-col md:justify-center items-center p-2" dir="ltr">
       <motion.img
         initial={{ y: -200, opacity: 0 }}
         whileInView={{ opacity: 1, y: 0 }}

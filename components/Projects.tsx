@@ -6,7 +6,7 @@ import { project } from "@/typings";
 import "swiper/css";
 import Project from "./project";
 
-export default function Projects({ projects }: any) {
+export default function Projects({ projects, title }: any) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -14,7 +14,7 @@ export default function Projects({ projects }: any) {
       transition={{ duration: 1.5 }}
       className="relative flex justify-center items-center h-screen"
     >
-      <h2 className="title">PROJECTS</h2>
+      <h2 className="title">{title}</h2>
       {/* md:top-36 top-32 */}
       <Swiper className="absolute my-5 select-none" loop={true}>
         {projects?.map((item: project) => {

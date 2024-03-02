@@ -1,13 +1,27 @@
 import { FormValues } from "@/typings";
 import { motion } from "framer-motion";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const { default: connectToDB } = require("@/utils/db");
 
-export default function ConnectMe({ MyInfo }: any) {
+export default function ConnectMe({
+  MyInfo,
+  title,
+  nameInput,
+  nameInputError,
+  emailInput,
+  emailInputError,
+  subjectInput,
+  subjectInputError,
+  bodyInput,
+  bodyInputError,
+  SubmitBtnTxt,
+}: any) {
   console.log("MyInfo", MyInfo);
+  const { t } = useTranslation();
 
   const {
     register,
@@ -61,7 +75,16 @@ export default function ConnectMe({ MyInfo }: any) {
             theme: "light",
           });
         } else if (res.status === 500) {
-          console.log("500 = ", res);
+          toast.error("! لطفا دوباره ارسال کنید", {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         }
 
         reset();
@@ -72,8 +95,8 @@ export default function ConnectMe({ MyInfo }: any) {
   return (
     <div className="relative flex justify-center items-center h-screen">
       <ToastContainer />
-      <h2 className="title">CONNECT ME</h2>
-      <motion.section
+      <h2 className="title">{title}</h2>
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
@@ -98,52 +121,48 @@ export default function ConnectMe({ MyInfo }: any) {
           <input
             type="text"
             id="text"
-            placeholder="name"
+            placeholder={nameInput}
             className="inputStyle"
             {...register("name", { required: true })}
           />
-          {errors.name && (
-            <p className="text-pink-700">name is required field</p>
-          )}
+          {errors.name && <div className="text-pink-700">{nameInputError}</div>}
 
           <input
             type="email"
             id="text"
-            placeholder="email"
+            placeholder={emailInput}
             className="inputStyle"
             {...register("email", { required: true })}
           />
           {errors.email && (
-            <p className="text-pink-700">email is required field</p>
+            <div className="text-pink-700">{emailInputError}</div>
           )}
           <input
             type="text"
             id="text"
-            placeholder="subject"
+            placeholder={subjectInput}
             className="inputStyle"
             {...register("subject", { required: true })}
           />
           {errors.subject && (
-            <p className="text-pink-700">email is required field</p>
+            <div className="text-pink-700">{subjectInputError}</div>
           )}
           <textarea
             id="body"
             {...register("body", { required: true })}
             className="inputStyle"
-            placeholder="Write your thoughts here..."
+            placeholder={bodyInput}
           ></textarea>
-          {errors.body && (
-            <p className="text-pink-700">This is required field</p>
-          )}
+          {errors.body && <div className="text-pink-700">{bodyInputError}</div>}
           <button
             type="submit"
             className="bg-pink-500 active:bg-pink-600 w-full rounded-lg dark:text-slate-200 text-white"
             disabled={!isDirty || !isValid}
           >
-            Submit
+            {SubmitBtnTxt}
           </button>
         </form>
-      </motion.section>
+      </motion.div>
     </div>
   );
 }

@@ -58,10 +58,9 @@ function Navbar() {
           className="appearance-none p-1 rounded-full"
           aria-label=".form-select-sm"
           onChange={changeLanguage}
+          defaultValue="en"
         >
-          <option value="en" selected>
-            En
-          </option>
+          <option value="en">En</option>
           <option value="fa">fa</option>
         </select>
         <Link href="#">

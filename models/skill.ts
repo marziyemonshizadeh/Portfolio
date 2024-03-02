@@ -6,9 +6,13 @@ const schema = mongoose.Schema({
     type: String,
     required: true,
   },
+  name: {
+    type: String,
+    required: true,
+  },
   Percent: {
     type: Number,
-    required: true,
+    // required: true,
   },
 });
 

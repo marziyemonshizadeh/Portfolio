@@ -33,7 +33,7 @@ This project is a portfolio
 ## Screenshots
 
 ## Project Status
-Project is: _InProcess
+Project is: __finished
 
 ## Contact
 

@@ -12,6 +12,7 @@ import ProjectModel from "@/models/project";
 import SkillModel from "@/models/skill";
 import { library, myInfo, project, skill } from "@/typings";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -42,6 +43,9 @@ export default function Home({
       className="static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none"
       dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
     >
+      <Head>
+        <title>marziye's portfolio</title>
+      </Head>
       {/* navbar */}
       <Navbar />
       {router.asPath !== "/#hero" && <ScrollToTopBtn />}

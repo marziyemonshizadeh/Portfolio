@@ -1,4 +1,4 @@
-import { FormValues } from "@/typings";
+import { FormValues } from "@/types/typings";
 import { motion } from "framer-motion";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";

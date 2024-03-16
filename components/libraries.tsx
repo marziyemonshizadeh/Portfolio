@@ -1,4 +1,4 @@
-import { library } from "@/typings";
+import { library } from "@/types/typings";
 import { motion } from "framer-motion";
 import Skill from "./skill";
 

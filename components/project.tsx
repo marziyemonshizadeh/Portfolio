@@ -1,4 +1,4 @@
-import { project } from "@/typings";
+import { project } from "@/types/typings";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";

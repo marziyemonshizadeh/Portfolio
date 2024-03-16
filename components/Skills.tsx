@@ -1,4 +1,4 @@
-import { skill } from "@/typings";
+import { skill } from "@/types/typings";
 import { motion } from "framer-motion";
 import Skill from "./skill";
 

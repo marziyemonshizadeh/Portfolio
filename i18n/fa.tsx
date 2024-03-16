@@ -1,4 +1,4 @@
-const fa = {
+const fa: any = {
   description:
     "مهندس کامپیوتر و برنامه نویس End Front، فردی دقیق ، مسئولیت پذیر و پر تلاش ، مشتاق به یادگیری تکنولوژی های جدید هستم . تقریبا دو سال پیش شروع به خواندن حوزه End Front کردم و در حال حاضر در حال یادگیری TypeScript و js Next هستم. آشنا با پکیج های پر استفاده ریکت مانند :react-icons , recharts , react-google-recaptcha , Formik , Yup , react-hook-form , reactfast-marquee, json-server, Sweetalert , react-lazy-load-image-component , reduxd",
   job: "مهندس کامپیوتر",

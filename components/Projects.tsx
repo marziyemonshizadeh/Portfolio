@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import { project } from "@/typings";
+import { project } from "@/types/typings";
 import "swiper/css";
 import Project from "./project";
 

@@ -10,7 +10,7 @@ import LibraryModel from "@/models/library";
 import MyInfoModel from "@/models/myInfo";
 import ProjectModel from "@/models/project";
 import SkillModel from "@/models/skill";
-import { library, myInfo, project, skill } from "@/typings";
+import { library, myInfo, project, skill } from "@/types/typings";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";

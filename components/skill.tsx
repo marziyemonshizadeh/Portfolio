@@ -26,8 +26,8 @@ const Skill = ({ imgUrl, directionLeft, name }: any) => {
       />
       <div className="absolute opacity-0 hover:opacity-50  transition duration-300 ease-in-out group-hover:bg-slate-300 md:w-20 md:h-20 w-12 h-12 rounded-full z-0">
         <div className="flex justify-center items-center h-full">
-          <p className="text-xs font-extrabold text-black">{name}</p>
-          {/* <p className="text-3xl font-bold text-black">{Percent}%</p> */}
+          <div className="text-xs font-extrabold text-black">{name}</div>
+          {/* <div className="text-3xl font-bold text-black">{Percent}%</div> */}
         </div>
       </div>
     </div>

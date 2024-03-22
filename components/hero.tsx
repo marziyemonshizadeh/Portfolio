@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 import HerosBackgroundCircles from "./hero'sBackgroundCircles";
 
 export default function Hero({
-  MyInfo,
+  // MyInfo,
   job,
   Typewriter1,
   Typewriter2,
@@ -15,7 +15,7 @@ export default function Hero({
   Typewriter6,
   aboutMeTitle,
   SkillsTitle,
-  librariesTitle,
+  // librariesTitle,
   ProjectsTitle,
   ConnectMeTitle,
 }: any) {

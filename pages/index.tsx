@@ -12,9 +12,9 @@ import ProjectModel from "@/models/project";
 import SkillModel from "@/models/skill";
 import { library, myInfo, project, skill } from "@/types/typings";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import Head from "next/head";
+// import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 const { default: connectToDB } = require("@/utils/db");
@@ -28,29 +28,29 @@ export default function Home({
   const router = useRouter();
   const { t } = useTranslation();
   // Disable right click
-  useEffect(() => {
-    const handleContextmenu = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-    };
-    document.addEventListener("contextmenu", handleContextmenu);
-    return function cleanup() {
-      document.removeEventListener("contextmenu", handleContextmenu);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleContextmenu = (e: { preventDefault: () => void }) => {
+  //     e.preventDefault();
+  //   };
+  //   document.addEventListener("contextmenu", handleContextmenu);
+  //   return function cleanup() {
+  //     document.removeEventListener("contextmenu", handleContextmenu);
+  //   };
+  // }, []);
 
   return (
-    <main
+    <div
       className="static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none"
       dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
     >
-      <Head>
+      {/* <Head>
         <title>marziye's portfolio</title>
-      </Head>
+      </Head> */}
       {/* navbar */}
       <Navbar />
       {router.asPath !== "/#hero" && <ScrollToTopBtn />}
       {/* hero */}
-      <section id="hero" className="snap-start h-screen">
+      <div id="hero" className="snap-start h-screen">
         <Hero
           MyInfo={MyInfo}
           job={t("job")}
@@ -66,30 +66,30 @@ export default function Home({
           ProjectsTitle={t("ProjectsTitle")}
           ConnectMeTitle={t("ConnectMeTitle")}
         />
-      </section>
+      </div>
       {/* about me */}
-      <section id="aboutMe" className="snap-center h-screen">
+      <div id="aboutMe" className="snap-center h-screen">
         <AboutMe
           // MyInfo={MyInfo}
           title={t("aboutMeTitle")}
           aboutMeLitleBg={t("aboutMeLitleBg")}
           description={t("description")}
         />
-      </section>
+      </div>
       {/* skills */}
-      <section id="skills" className="snap-start h-screen">
+      <div id="skills" className="snap-start h-screen">
         <Skills skills={skills} title={t("SkillsTitle")} />
-      </section>
+      </div>
       {/* Libraries */}
       {/* <div id="libraries" className="snap-start h-screen">
         <Libraries libraries={libraries} title={t("librariesTitle")} />
       </div> */}
       {/* projects */}
-      <section id="projects" className="snap-center h-screen">
+      <div id="projects" className="snap-center h-screen">
         <Projects projects={projects} title={t("ProjectsTitle")} />
-      </section>
+      </div>
       {/* connect me */}
-      <section id="connectMe" className="snap-center h-screen">
+      <div id="connectMe" className="snap-center h-screen">
         <ConnectMe
           MyInfo={MyInfo}
           title={t("ConnectMeTitle")}
@@ -103,8 +103,8 @@ export default function Home({
           bodyInputError={t("bodyInputError")}
           SubmitBtnTxt={t("SubmitBtnTxt")}
         />
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }
 export const getStaticProps: GetStaticProps = async () => {

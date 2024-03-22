@@ -2,8 +2,6 @@ import { library } from "@/types/typings";
 import { motion } from "framer-motion";
 import Skill from "./skill";
 
-type Props = {};
-
 export default function Libraries({ libraries, title }: any) {
   return (
     <motion.div
@@ -20,7 +18,6 @@ export default function Libraries({ libraries, title }: any) {
         {libraries?.map((item: library) => {
           return <Skill key={item._id} {...item} />;
         })}
-        <span>.....</span>
       </div>
     </motion.div>
   );

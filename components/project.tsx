@@ -25,7 +25,7 @@ const Project = ({ img, title, description, demoUrl, githubUrl }: project) => {
         <h2 className="my-4 font-semibold text-2xl text-black dark:text-slate-300">
           {title}
         </h2>
-        <p className="max-w-[800px] md:leading-9 text-sm">{description}</p>
+        <div className="max-w-[800px] md:leading-9 text-sm">{description}</div>
         <div className="flex justify-center items-center gap-5 my-2">
           <Link
             href={demoUrl}

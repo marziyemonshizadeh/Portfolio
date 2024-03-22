@@ -3,9 +3,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
 
-type Props = {};
-
-function ThemeSwitch({}: Props) {
+function ThemeSwitch({}) {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
   useEffect(() => setMounted(true), []);

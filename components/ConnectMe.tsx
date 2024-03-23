@@ -1,7 +1,6 @@
 import { FormValues } from "@/types/typings";
 import { motion } from "framer-motion";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,8 +19,6 @@ export default function ConnectMe({
   bodyInputError,
   SubmitBtnTxt,
 }: any) {
-  const { t } = useTranslation();
-
   const {
     register,
     reset,

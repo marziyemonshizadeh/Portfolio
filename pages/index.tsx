@@ -13,11 +13,11 @@ import SkillModel from "@/models/skill";
 import { library, myInfo, project, skill } from "@/types/typings";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 // import Head from "next/head";
+import connectToDB from "@/utils/db";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
-const { default: connectToDB } = require("@/utils/db");
 
 export default function Home({
   projects,

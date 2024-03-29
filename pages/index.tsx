@@ -1,29 +1,17 @@
+import AboutMe from "@/components/AboutMe";
+import ConnectMe from "@/components/ConnectMe";
+import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
+import Hero from "@/components/hero";
+// import Libraries from "@/components/libraries";
+import Navbar from "@/components/navbar";
+import ScrollToTopBtn from "@/components/scrollToTopBtn";
 import LibraryModel from "@/models/library";
 import MyInfoModel from "@/models/myInfo";
 import ProjectModel from "@/models/project";
 import SkillModel from "@/models/skill";
 import { library, myInfo, project, skill } from "@/types/typings";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-// import dynamic from "next/dynamic";
-import AboutMe from "@/components/AboutMe";
-// const AboutMe = dynamic(() => import("@/components/AboutMe"), { ssr: false });
-import ConnectMe from "@/components/ConnectMe";
-// const ConnectMe = dynamic(() => import("@/components/ConnectMe"), {
-// ssr: false,
-// });
-import Projects from "@/components/Projects";
-// const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
-import Skills from "@/components/Skills";
-// const Skills = dynamic(() => import("@/components/Skills"), { ssr: false });
-import Hero from "@/components/hero";
-// const Hero = dynamic(() => import("@/components/hero"), { ssr: false });
-// import Libraries from "@/components/libraries";
-import Navbar from "@/components/navbar";
-// const Navbar = dynamic(() => import("@/components/navbar"), { ssr: false });
-import ScrollToTopBtn from "@/components/scrollToTopBtn";
-// const ScrollToTopBtn = dynamic(() => import("@/components/scrollToTopBtn"), {
-// ssr: false,
-// });
 // import Head from "next/head";
 import connectToDB from "@/utils/db";
 import { useRouter } from "next/router";

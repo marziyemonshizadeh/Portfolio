@@ -4,7 +4,6 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const { default: connectToDB } = require("@/utils/db");
 
 export default function ConnectMe({
   MyInfo,
@@ -26,7 +25,6 @@ export default function ConnectMe({
     formState: { errors, isDirty, isValid },
   } = useForm<FormValues>();
   const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
-    connectToDB();
     await fetch("api/messages", {
       method: "POST",
       headers: {
@@ -47,6 +45,7 @@ export default function ConnectMe({
             progress: undefined,
             theme: "light",
           });
+          reset();
         } else if (res.status === 422) {
           toast.warning("! داده ی شما معتبر نمی باشد", {
             position: "bottom-left",
@@ -81,8 +80,6 @@ export default function ConnectMe({
             theme: "light",
           });
         }
-
-        reset();
         return res.json();
       })
       .catch((err) => console.log("can not sent message", err));

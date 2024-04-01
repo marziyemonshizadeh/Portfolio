@@ -12,6 +12,9 @@ const handler = async (req: NextApiRequest,
   } else if (req.method === "POST") {
     try {
       const { name, email, subject, body } = req.body;
+      if (!name.trim() || !email.trim() || !subject.trim() || !body.trim() || subject.length<5 || name.length<4 ) {
+        return res.status(422).json({ message: "invalid data !!!" });
+      }
       await MessageModel.create({ name, email, subject, body });
       return res.status(201).json({ message: "message created successfully" });
     } catch (err) {

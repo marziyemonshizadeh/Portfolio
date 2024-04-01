@@ -5,7 +5,6 @@ import { Typewriter } from "react-simple-typewriter";
 import HerosBackgroundCircles from "./hero'sBackgroundCircles";
 
 export default function Hero({
-  // MyInfo,
   job,
   Typewriter1,
   Typewriter2,
@@ -15,7 +14,6 @@ export default function Hero({
   Typewriter6,
   aboutMeTitle,
   SkillsTitle,
-  // librariesTitle,
   ProjectsTitle,
   ConnectMeTitle,
 }: any) {
@@ -65,9 +63,6 @@ export default function Hero({
         <Link href="#skills" className="heroBtn">
           {SkillsTitle}
         </Link>
-        {/* <Link href="#libraries" className="heroBtn">
-          {librariesTitle}
-        </Link> */}
         <Link href="#projects" className="heroBtn">
           {ProjectsTitle}
         </Link>

@@ -2,9 +2,7 @@ import Link from "next/link";
 import { FaArrowUp } from "react-icons/fa";
 import { redirect } from "react-router-dom";
 
-type Props = {};
-
-const ScrollToTopBtn = (props: Props) => {
+const ScrollToTopBtn = () => {
   return (
     <>
       <Link

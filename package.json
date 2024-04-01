@@ -32,7 +32,8 @@
     "react-simple-typewriter": "^5.0.1",
     "react-socks": "^2.2.0",
     "react-toastify": "^10.0.5",
-    "swiper": "^11.1.0"
+    "swiper": "^11.1.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

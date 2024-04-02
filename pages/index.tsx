@@ -1,21 +1,19 @@
 import AboutMe from "@/components/AboutMe";
 import ConnectMe from "@/components/ConnectMe";
-const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
-// import Projects from "@/components/Projects";
+// const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
+import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
-// import ScrollToTopBtn from "@/components/scrollToTopBtn";
+import ScrollToTopBtn from "@/components/scrollToTopBtn";
 import MyInfoModel from "@/models/myInfo";
 import ProjectModel from "@/models/project";
 import SkillModel from "@/models/skill";
 import { myInfo, project, skill } from "@/types/typings";
-import { InferGetStaticPropsType } from "next";
-// import { useRouter } from "next/router";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { useRouter } from "next/router";
 // import { useEffect } from "react";
 import connectToDB from "@/utils/db";
-import { useTheme } from "next-themes";
-import dynamic from "next/dynamic";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 
@@ -25,10 +23,8 @@ export default function Home({
   // libraries,
   MyInfo,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  // const router = useRouter();
+  const router = useRouter();
   const { t } = useTranslation();
-  const { resolvedTheme } = useTheme();
-
   // Disable right click
   // useEffect(() => {
   //   const handleContextmenu = (e: { preventDefault: () => void }) => {
@@ -42,15 +38,12 @@ export default function Home({
 
   return (
     <div
-      className={`${
-        resolvedTheme === "dark" ? "dark" : ""
-      } static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none`}
+      className="static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none"
       dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
-      suppressHydrationWarning={true}
     >
       {/* navbar */}
       <Navbar />
-      {/* {router.asPath !== "/#hero" && <ScrollToTopBtn />} */}
+      {router.asPath !== "/#hero" && <ScrollToTopBtn />}
       {/* hero */}
       <div id="hero" className="snap-start h-screen">
         <Hero
@@ -105,8 +98,7 @@ export default function Home({
     </div>
   );
 }
-export const getStaticProps = async () => {
-  // export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   // first connect to db
   connectToDB();
   console.log("connect to db in root :)");

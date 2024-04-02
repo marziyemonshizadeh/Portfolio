@@ -1,5 +1,4 @@
 import i18n from "@/i18n";
-import Image from "next/image";
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
 import HerosBackgroundCircles from "./hero'sBackgroundCircles";
@@ -20,15 +19,21 @@ export default function Hero({
   return (
     <div className="relative flex flex-col justify-center items-center h-screen space-y-8 overflow-hidden">
       <HerosBackgroundCircles />
-      <Image
+      <img
+        width={100}
+        height={100}
+        src="/images/5.jpg"
+        alt="profile"
+        className="relative object-cover rounded-full w-32 h-32 mx-auto select-none"
+      />
+      {/* <Image
         width={100}
         height={100}
         priority={true}
         src="/images/4.jpg"
-        // src={Object.assign({}, MyInfo)[0].heroPageImgUrl}
         alt="profile"
         className="relative object-cover rounded-full w-32 h-32 mx-auto select-none"
-      />
+      /> */}
       <h2
         className={`uppercase text-center  ${
           i18n.language == "en"

@@ -14,6 +14,7 @@ import { InferGetStaticPropsType } from "next";
 // import { useRouter } from "next/router";
 // import { useEffect } from "react";
 import connectToDB from "@/utils/db";
+import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
@@ -26,6 +27,8 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   // const router = useRouter();
   const { t } = useTranslation();
+  const { resolvedTheme } = useTheme();
+
   // Disable right click
   // useEffect(() => {
   //   const handleContextmenu = (e: { preventDefault: () => void }) => {
@@ -39,8 +42,11 @@ export default function Home({
 
   return (
     <div
-      className="static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none"
+      className={`${
+        resolvedTheme === "dark" ? "dark" : ""
+      } static bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-400  text-lg snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-thin scrollbar-thumb-pink-500 scrollbar-track-gray-400/20 z-0 select-none`}
       dir={`${i18n.language == "en" ? "ltr" : "rtl"}`}
+      suppressHydrationWarning={true}
     >
       {/* navbar */}
       <Navbar />

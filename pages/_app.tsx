@@ -1,12 +1,12 @@
 import Providers from "@/components/provider";
 import "@/styles/globals.css";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
-import { BreakpointProvider } from "react-socks";
+// import { BreakpointProvider } from "react-socks";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { resolvedTheme } = useTheme();
+  // const { resolvedTheme } = useTheme();
   const [showChild, setShowChild] = useState(false);
 
   useEffect(() => {
@@ -17,15 +17,15 @@ export default function App({ Component, pageProps }: AppProps) {
     return null;
   }
   return (
-    <BreakpointProvider>
-      <div
-        className={`${resolvedTheme === "dark" ? "dark" : ""}`}
-        suppressHydrationWarning={true}
-      >
-        <Providers>
-          <Component {...pageProps} />
-        </Providers>
-      </div>
-    </BreakpointProvider>
+    // <BreakpointProvider>
+    //   <div
+    //     className={`${resolvedTheme === "dark" ? "dark" : ""}`}
+    //     suppressHydrationWarning={true}
+    //   >
+    <Providers>
+      <Component {...pageProps} />
+    </Providers>
+    //   </div>
+    // </BreakpointProvider>
   );
 }

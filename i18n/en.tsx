@@ -1,6 +1,6 @@
 const en = {
   description:
-    "I am Marzieh Menshizadeh, a computer engineer and front-endprogrammer, I am an accurate, responsible and hardworking person, Iam eager to learn new technologies. I am very interested in math and programming. I started learning Front End almost two years ago and am currently learning TypeScript and Next js !",
+    "I am Marzieh Menshizadeh, a computer engineer and junior Front-End programmer, an accurate, responsible, hardworking person and eager to learn new technologies. I am very interested in front-end programming. I started learning Front-End almost two years ago and am currently learning TypeScript and Next js. I enjoy learning and working in a team and am looking to develop technical and soft skills with an experienced team.",
   job: "Computer Engineer",
   Typewriter1: "Hi I Am Marzieh Monshizadeh",
   Typewriter2: "I am fronted developer",

@@ -1,6 +1,5 @@
 import AboutMe from "@/components/AboutMe";
 import ConnectMe from "@/components/ConnectMe";
-// const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Hero from "@/components/hero";
@@ -10,10 +9,10 @@ import MyInfoModel from "@/models/myInfo";
 import ProjectModel from "@/models/project";
 import SkillModel from "@/models/skill";
 import { myInfo, project, skill } from "@/types/typings";
+import connectToDB from "@/utils/db";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
-// import { useEffect } from "react";
-import connectToDB from "@/utils/db";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 
@@ -25,16 +24,17 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   const { t } = useTranslation();
+
   // Disable right click
-  // useEffect(() => {
-  //   const handleContextmenu = (e: { preventDefault: () => void }) => {
-  //     e.preventDefault();
-  //   };
-  //   document.addEventListener("contextmenu", handleContextmenu);
-  //   return function cleanup() {
-  //     document.removeEventListener("contextmenu", handleContextmenu);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const handleContextmenu = (e: { preventDefault: () => void }) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", handleContextmenu);
+    return function cleanup() {
+      document.removeEventListener("contextmenu", handleContextmenu);
+    };
+  }, []);
 
   return (
     <div

@@ -43,7 +43,11 @@ export default function Home({
     >
       {/* navbar */}
       <Navbar />
-      {router.asPath !== "/#hero" && <ScrollToTopBtn />}
+      {router.asPath === "/" || router.asPath === "/#hero" ? (
+        ""
+      ) : (
+        <ScrollToTopBtn />
+      )}
       {/* hero */}
       <div id="hero" className="snap-start h-screen">
         <Hero

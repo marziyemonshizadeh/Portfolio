@@ -55,7 +55,7 @@ function Navbar() {
         className="flex items-center gap-3"
       >
         <select
-          className="appearance-none p-1 rounded-full"
+          className="appearance-none p-1.5 px-2 text-center font-medium text-sm rounded-full"
           aria-label=".form-select-sm"
           onChange={changeLanguage}
           defaultValue="en"
